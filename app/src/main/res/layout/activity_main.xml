@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainactivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F5F5"
+    tools:context="com.turtlecode.checkboxspinnerapp.MainActivity">
+
+
+    <Spinner
+        android:id="@+id/spYears"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
+        android:entries="@array/years"
+        android:scrollbarSize="20dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/spMonths"
+        app:layout_constraintEnd_toStartOf="@+id/spMonths"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spMonths"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="3dp"
+        android:entries="@array/months"
+        app:layout_constraintEnd_toStartOf="@+id/spDays"
+        app:layout_constraintStart_toEndOf="@+id/spYears"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spDays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:entries="@array/days"
+        app:layout_constraintBaseline_toBaselineOf="@+id/spMonths"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spMonths" />
+
+    <TextView
+        android:id="@+id/yearText"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginBottom="45dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/monthText"
+        app:layout_constraintEnd_toEndOf="@+id/monthText"
+        app:layout_constraintStart_toStartOf="@+id/monthText"
+        app:layout_constraintTop_toBottomOf="@+id/spMonths" />
+
+    <TextView
+        android:id="@+id/monthText"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="12dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/dayText"
+        app:layout_constraintEnd_toEndOf="@+id/dayText"
+        app:layout_constraintStart_toStartOf="@+id/dayText" />
+
+    <TextView
+        android:id="@+id/dayText"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginBottom="160dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/genderText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spMonths" />
+
+    <TextView
+        android:id="@+id/genderText"
+        android:layout_width="138dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="37dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FemaleBox" />
+
+    <CheckBox
+        android:id="@+id/FemaleBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="101dp"
+        android:text="Female"
+        app:layout_constraintBaseline_toBaselineOf="@+id/MaleBox"
+        app:layout_constraintEnd_toEndOf="@+id/genderText" />
+
+    <CheckBox
+        android:id="@+id/MaleBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="93dp"
+        android:layout_marginTop="311dp"
+        android:text="Male"
+        app:layout_constraintStart_toStartOf="@+id/genderText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
